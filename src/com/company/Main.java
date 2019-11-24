@@ -5,11 +5,10 @@ import java.io.*;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        FileReader fileReader = new FileReader("/home/ivan/IdeaProjects/ExpresionesRegulares_Returns/src/com/company/santako.txt");
+        FileReader fileReader = new FileReader("E:\\Intellij Projects\\Expresiones Regulares\\src\\com\\company\\santako.txt");
         BufferedReader br = new BufferedReader(fileReader);
 
-        String line = br.readLine();
-
-        // TO CHAR ARRAY Y MAMARLA
+       Sense_Expresio se = new Sense_Expresio();
+       se.metodo(br);
     }
 }
