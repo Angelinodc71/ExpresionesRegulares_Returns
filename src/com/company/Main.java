@@ -5,10 +5,12 @@ import java.io.*;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        FileReader fileReader = new FileReader("E:\\Intellij Projects\\Expresiones Regulares\\src\\com\\company\\santako.txt");
+        FileReader fileReader = new FileReader("/home/ivan/IdeaProjects/ExpresionesRegulares_Returns/src/com/company/santako.txt");
         BufferedReader br = new BufferedReader(fileReader);
 
-       Sense_Expresio se = new Sense_Expresio();
-       se.metodo(br);
+//       Sense_Expresio sense_expresio = new Sense_Expresio();
+//       sense_expresio.metodo(br);
+        Amb_Expresio amb_expresio = new Amb_Expresio();
+        amb_expresio.metodo(br);
     }
 }
