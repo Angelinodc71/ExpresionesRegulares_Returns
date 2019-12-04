@@ -1,18 +1,20 @@
 package com.company;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
+import java.sql.SQLOutput;
 
 public class Sense_Expresio {
-    void metodo (BufferedReader br) throws IOException {
+    void metodo () throws IOException {
+        FileReader fileReader = new FileReader("data/santako.txt");
+        BufferedReader br = new BufferedReader(fileReader);
         String lines = br.readLine();
-
         while (lines!=null) {
             int paranoels = 0;
             int follets = 0;
             int rens = 0;
             char[] line = lines.toCharArray();
-            System.out.println(line);
             boolean esparenoel = false;
             for (int i = 0; i < line.length ; i++) {
                 if (i+8 < line.length) {
@@ -34,9 +36,18 @@ public class Sense_Expresio {
                     }
                 }
             }
-
-            System.out.println("Pare Noel("+paranoels+")"+" Ren ("+rens+")"+" Follet("+follets+")");
+            if (paranoels>0) {
+                System.out.print(" Pare Noel ("+paranoels+")");
+            }
+            if (rens>0) {
+                System.out.print(" Ren ("+rens+")");
+            }
+            if (follets>0) {
+                System.out.print(" Follet ("+follets+")");
+            }
+            System.out.println();
             lines = br.readLine();
         }
+        br.close();
     }
 }
